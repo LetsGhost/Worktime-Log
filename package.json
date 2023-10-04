@@ -1,0 +1,23 @@
+{
+  "name": "worktime-log",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "main.js",
+  "scripts": {
+    "test": "-"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "-"
+  ],
+  "author": "Paul Ehrling",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^26.2.4",
+    "electron-builder": "^24.6.4",
+    "electron-store": "^8.1.0"
+  }
+}

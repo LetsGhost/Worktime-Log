@@ -67,7 +67,7 @@ resetTimer.addEventListener("click", () => {
 // Save the timer value to the store
 save.addEventListener("click", () => {
     id++;
-    console.log(id)
+
     const object = {
         id: id,
         time: timerDisplay.textContent,
@@ -111,7 +111,10 @@ function loadData() {
             span.appendChild(date);
 
             body.appendChild(span);
+
+            id = item.id;
         }
     }
+    console.log(id);
 }
 loadData()

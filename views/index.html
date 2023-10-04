@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Time - Log</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        :root {
+            --primary-color: #101010;
+            --text-color: #FBFBFB;
+            --secondary-color: #252733;
+            --button-color: #035671;
+            --border-radius: 0.5rem;
+        }
+
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: var(--primary-color);
+            color: #FBFBFB;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
+            gap: 1rem;
+        }
+
+        header h2 {
+            font-size: 1.7em;
+            font-weight: 600;
+        }
+
+        header .fa-clock-o {
+            font-size: 1.5em;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .timer-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            width: 17rem;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            font-size: 3em;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            gap: 1rem;
+            width: 90%;
+        }
+
+        .button-container button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            gap: 0.5rem;
+            background-color: var(--button-color);
+            border: none;
+            border-radius: 0.3rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: scale 0.2s ease-in-out;
+        }
+
+        .button-container button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .button-container button:active {
+            scale: 0.95;
+            background-color: var(--primary-color);
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            width: 90%;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+        }
+
+        .headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: solid var(--primary-color) 1px;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .body span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: solid var(--primary-color) 1px;
+        }
+
+        .body span p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .body span p button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            font-size: 1em;
+            cursor: pointer;
+            transition: scale 0.2s ease-in-out;
+        }
+
+        .body span p button:active {
+            scale: 0.95;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .total-time {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            width: 90%;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <i class="fa fa-clock-o"></i>
+    <h2>Work - Time - Log</h2>
+</header>
+
+<main>
+    <div class="timer-display" id="timer-display">
+        <span>00:00:00</span>
+    </div>
+    <div class="button-container">
+        <button id="delete">
+            <i class="fa fa-minus"></i>
+            <span>Alles löschen</span>
+        </button>
+        <button id="save">
+            <i class="fa fa-bookmark"></i>
+            <span>Save</span>
+        </button>
+
+        <button id="start">
+            <i class="fa fa-play"></i>
+            <span>Start</span>
+        </button>
+
+        <button id="pause">
+            <i class="fa fa-pause"></i>
+            <span>Stopp</span>
+        </button>
+
+        <button id="reset">
+            <i class="fa fa-repeat"></i>
+            <span>Reset</span>
+        </button>
+    </div>
+    <div class="list-container">
+        <div class="headline">
+            <span>Datum</span>
+            <span>Zeiten</span>
+        </div>
+        <div class="body" id="body">
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="total-time">
+            <span>
+                Gesammt Zeit:
+                <span>26.09.2023</span> -
+                <span>23.09.2023</span>
+            </span>
+        <span>02:17:08</span>
+    </div>
+</footer>
+</body>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/storage.js"></script>
+</html>

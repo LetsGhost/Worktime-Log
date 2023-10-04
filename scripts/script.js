@@ -115,6 +115,5 @@ function loadData() {
             id = item.id;
         }
     }
-    console.log(id);
 }
 loadData()

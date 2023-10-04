@@ -20,9 +20,14 @@ function getAllData() {
     return store.store;
 }
 
+function deleteData(key) {
+    store.delete(key);
+}
+
 module.exports = {
     saveData,
     getData,
     clearData,
-    getAllData
+    getAllData,
+    deleteData
 }

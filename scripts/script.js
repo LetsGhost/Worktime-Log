@@ -1,4 +1,4 @@
-const { saveData, getAllData, getData, clearData } = require('../scripts/storage.js');
+const { saveData, getAllData, getData, clearData, deleteData } = require('../scripts/storage.js');
 
 // Display
 const timerDisplay = document.getElementById("timer-display");
@@ -75,10 +75,12 @@ save.addEventListener("click", () => {
     }
 
     saveData(`time-${id}`, object)
+    window.location.reload();
 })
 
 clear.addEventListener("click", () => {
     clearData();
+    window.location.reload();
 })
 
 function loadData() {
@@ -100,6 +102,7 @@ function loadData() {
             date.textContent = item.date;
 
             const btn = document.createElement("button");
+            btn.setAttribute("onclick", `deleteObject(${item.id})`);
 
             const trashIcon = document.createElement('i');
             trashIcon.className = 'fa fa-trash';
@@ -117,3 +120,8 @@ function loadData() {
     }
 }
 loadData()
+
+function deleteObject(id) {
+    deleteData(`time-${id}`)
+    window.location.reload();
+}

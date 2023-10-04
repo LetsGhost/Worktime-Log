@@ -87,10 +87,26 @@ function loadData() {
     // Assume getAllData() returns an array of objects, each containing date and time properties
     const data = getAllData();
 
+    // Initialize variables to store the total hours, minutes, and seconds
+    let totalHours = 0;
+    let totalMinutes = 0;
+    let totalSeconds = 0;
+
+    let lastDate = null;
+    let firstDate = null;
+
+
     // Loop through the data array
     for (const key in data) {
         if (Object.hasOwnProperty.call(data, key)) {
             const item = data[key];
+
+            const [hours, minutes, seconds] = item.time.split(':').map(Number);
+
+            // Add the parsed time to the total
+            totalHours += hours;
+            totalMinutes += minutes;
+            totalSeconds += seconds;
 
             const body = document.getElementById("body");
 
@@ -116,8 +132,23 @@ function loadData() {
             body.appendChild(span);
 
             id = item.id;
+            lastDate = item.date;
         }
     }
+
+    // Calculate the total time in hours, minutes, and seconds
+    totalMinutes += Math.floor(totalSeconds / 60);
+    totalSeconds %= 60;
+    totalHours += Math.floor(totalMinutes / 60);
+    totalMinutes %= 60;
+
+    const total = document.getElementById("total");
+    total.textContent = `${totalHours}:${totalMinutes}:${totalSeconds}`;
+
+    const firstDateText = getData("time-1")
+    document.getElementById("first-date").textContent = firstDateText.date;
+    document.getElementById("last-date").textContent = lastDate;
+
 }
 loadData()
 

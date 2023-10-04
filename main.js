@@ -1,4 +1,5 @@
 const { app, BrowserWindow, Menu, dialog } = require("electron");
+
 const ElectronStore = require('electron-store');
 ElectronStore.initRenderer();
 

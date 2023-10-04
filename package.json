@@ -1,14 +1,15 @@
 {
   "name": "worktime-log",
   "version": "1.0.0",
-  "description": "-",
+  "description": "A tool to record your worktime",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder"
   },
   "repository": {
     "type": "git",
-    "url": "-"
+    "url": "https://github.com/LetsGhost/Worktime-Log.git"
   },
   "keywords": [
     "-"
@@ -16,8 +17,33 @@
   "author": "Paul Ehrling",
   "license": "ISC",
   "dependencies": {
+    "electron-store": "^8.1.0"
+  },
+  "build": {
+    "appId": "de.athletept.worktimelog",
+    "productName": "Worktime Log",
+    "directories": {
+      "output": "build"
+    },
+    "icon": "icon.png",
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "LetsGhost",
+        "repo": "https://github.com/LetsGhost/Worktime-Log.git"
+      }
+    ]
+  },
+  "devDependencies": {
     "electron": "^26.2.4",
     "electron-builder": "^24.6.4",
-    "electron-store": "^8.1.0"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

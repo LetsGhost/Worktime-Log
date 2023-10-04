@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Time - Log</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        :root {
+            --primary-color: #101010;
+            --text-color: #FBFBFB;
+            --secondary-color: #252733;
+            --button-color: #035671;
+            --border-radius: 0.5rem;
+        }
+
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: var(--primary-color);
+            color: #FBFBFB;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
+            gap: 1rem;
+        }
+
+        header h2 {
+            font-size: 1.7em;
+            font-weight: 600;
+        }
+
+        header .fa-clock-o {
+            font-size: 1.5em;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .timer-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            width: 17rem;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            font-size: 3em;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            gap: 1rem;
+            width: 90%;
+        }
+
+        .button-container button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            gap: 0.5rem;
+            background-color: var(--button-color);
+            border: none;
+            border-radius: 0.3rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: scale 0.2s ease-in-out;
+        }
+
+        .button-container button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .button-container button:active {
+            scale: 0.95;
+            background-color: var(--primary-color);
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            width: 90%;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+        }
+
+        .headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: solid var(--primary-color) 1px;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .body span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: solid var(--primary-color) 1px;
+        }
+
+        .body span p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .body span p button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            border: none;
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            font-size: 1em;
+            cursor: pointer;
+            transition: scale 0.2s ease-in-out;
+        }
+
+        .body span p button:active {
+            scale: 0.95;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .total-time {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            width: 90%;
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Changelog</h1>
+</header>
+
+<main>
+    <div>
+        <h2>v1.0.0</h2>
+        <ul>
+            <li>Initial release</li>
+        </ul>
+    </div>
+</main>
+
+</body>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/storage.js"></script>
+</html>
